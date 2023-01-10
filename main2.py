@@ -29,7 +29,7 @@ async def cmd_random(message: types.Message):
     else:
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(types.InlineKeyboardButton(text="Подписаться", url='https://t.me/TEAMRMC'))
-        await bot.send_message(message.from_user.id, (f"Привет {message.from_user.first_name} \nДля того чтобы пользоваться ботом\nНеобходимо подписаться на группу ниже подписаться на группу"),reply_markup=keyboard)
+        await bot.send_message(message.from_user.id, (f"Привет {message.from_user.first_name} \nДля того, чтобы пользоваться ботом,\nнеобходимо подписаться на наш канал RMC и снова нажать на\n/start, этот бот сделан для того, чтобы\nты мог разобраться с непонятными\nтемами в учебе или найти себе исполнителя\nдля работы"),reply_markup=keyboard)
 
 
 
@@ -98,7 +98,7 @@ async def send_random_value(call: types.CallbackQuery):
     keyboard.add(types.InlineKeyboardButton(text="История медицины", callback_data="stomat_1_med_history"))
     keyboard.add(types.InlineKeyboardButton(text="История России", callback_data="stomat_1_rus_history"))
     keyboard.add(types.InlineKeyboardButton(text="Латынь", callback_data="stomat_1_latin"))
-    keyboard.add(types.InlineKeyboardButton(text="ФЗЛ", callback_data="stomat_1_fzl"))
+    keyboard.add(types.InlineKeyboardButton(text="Физиология", callback_data="stomat_1_physyology"))
     keyboard.add(types.InlineKeyboardButton(text="Физика", callback_data="stomat_1_physic"))
     keyboard.add(types.InlineKeyboardButton(text="Химия", callback_data="stomat_1_chemistry"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat"))
@@ -111,12 +111,13 @@ async def send_random_value(call: types.CallbackQuery):
     keyboard = types.InlineKeyboardMarkup()
     keyboard.add(types.InlineKeyboardButton(text="БЖД", callback_data="stomat_2_BZHD"))
     keyboard.add(types.InlineKeyboardButton(text="БХ", callback_data="stomat_2_BX"))
+    keyboard.add(types.InlineKeyboardButton(text="Пропедевтика стомат", callback_data="stomat_2_propovedika_stomat"))
     keyboard.add(types.InlineKeyboardButton(text="История России", callback_data="stomat_2_rus_history"))
+    keyboard.add(types.InlineKeyboardButton(text="История медицины", callback_data="stomat_2_med_history"))
     keyboard.add(types.InlineKeyboardButton(text="Латынь", callback_data="stomat_2_latin"))
     keyboard.add(types.InlineKeyboardButton(text="Микробиология", callback_data="stomat_2_microbiology"))
     keyboard.add(types.InlineKeyboardButton(text="Патан", callback_data="stomat_2_patan"))
     keyboard.add(types.InlineKeyboardButton(text="Патфиз", callback_data="stomat_2_patfiz"))
-    keyboard.add(types.InlineKeyboardButton(text="ФЗЛ", callback_data="stomat_2_fzl"))
     keyboard.add(types.InlineKeyboardButton(text="Физиология", callback_data="stomat_2_physyology"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat"))
     await call.message.answer('Выбери предмет', reply_markup=keyboard)
@@ -169,8 +170,8 @@ async def send_random_value(call: types.CallbackQuery):
     keyboard.add(types.InlineKeyboardButton(text="Латынь", callback_data="lech_fak_2_latin"))
     keyboard.add(types.InlineKeyboardButton(text="Микробиология", callback_data="lech_fak_2_microbiology"))
     keyboard.add(types.InlineKeyboardButton(text="Патан", callback_data="lech_fak_2_patan"))
+    keyboard.add(types.InlineKeyboardButton(text="Гистология", callback_data="lech_fak_2_hystology"))
     keyboard.add(types.InlineKeyboardButton(text="Патфиз", callback_data="lech_fak_2_patfiz"))
-    keyboard.add(types.InlineKeyboardButton(text="ФЗЛ", callback_data="lech_fak_2_fzl"))
     keyboard.add(types.InlineKeyboardButton(text="Физиология", callback_data="lech_fak_2_physyology"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak"))
     await call.message.answer('Выбери предмет', reply_markup=keyboard)
@@ -605,22 +606,22 @@ async def process_start_command(message: types.Message):
     await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
 
-@dp.callback_query_handler(text="stomat_1_fzl")
+@dp.callback_query_handler(text="stomat_1_physyology")
 async def send_random_value(call: types.CallbackQuery):
     keyboard = types.InlineKeyboardMarkup()
-    keyboard.add(types.InlineKeyboardButton(text="Репетиторство", callback_data="stomat_1_fzl_tutoring"))
+    keyboard.add(types.InlineKeyboardButton(text="Репетиторство", callback_data="stomat_1_physyology_tutoring"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="course_1"))
     await call.message.answer('Выбери услугу', reply_markup=keyboard)
     await call.message.delete()
 
-@dp.callback_query_handler(text="stomat_1_fzl_tutoring")
+@dp.callback_query_handler(text="stomat_1_physyology_tutoring")
 async def process_start_command(message: types.Message):
     keyboard = types.InlineKeyboardMarkup()
-    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_1_fzl"))
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_1_physyology"))
     keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
     buttons = ["/start"]
     keyboard_2.add(*buttons)
-    for i in stomat_1_fzl_tutoring:
+    for i in stomat_1_physyology_tutoring:
         await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
         time.sleep(0.2)
     time.sleep(0.5)
@@ -888,6 +889,46 @@ async def process_start_command(message: types.Message):
         time.sleep(0.2)
     time.sleep(0.5)
     await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+@dp.callback_query_handler(text="lech_fak_2_hystology")
+async def send_random_value(call: types.CallbackQuery):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Репетиторство", callback_data="lech_fak_2_hystology_tutoring"))
+    keyboard.add(types.InlineKeyboardButton(text="Решение тестов", callback_data="lech_fak_2_hystology_solving_tests"))
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_2"))
+    await call.message.answer('Выбери услугу', reply_markup=keyboard)
+    await call.message.delete()
+
+
+
+@dp.callback_query_handler(text="lech_fak_2_hystology_tutoring")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_2_hystology"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in lech_fak_2_hystology_tutoring:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+
+@dp.callback_query_handler(text="lech_fak_2_hystology_solving_tests")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_2_hystology"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in lech_fak_2_hystology_solving_tests:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+
 
 
 
@@ -1193,6 +1234,27 @@ async def process_start_command(message: types.Message):
     time.sleep(0.5)
     await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
+@dp.callback_query_handler(text="stomat_2_med_history")
+async def send_random_value(call: types.CallbackQuery):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Решение тестов", callback_data="stomat_2_med_history_solving_tests"))
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2"))
+    await call.message.answer('Выбери услугу', reply_markup=keyboard)
+    await call.message.delete()
+
+@dp.callback_query_handler(text="stomat_2_med_history_solving_tests")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2_med_history"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in stomat_2_rus_history_solving_tests:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
 
 
 @dp.callback_query_handler(text="stomat_2_latin")
@@ -1316,27 +1378,6 @@ async def process_start_command(message: types.Message):
 
 
 
-@dp.callback_query_handler(text="stomat_2_fzl")
-async def send_random_value(call: types.CallbackQuery):
-    keyboard = types.InlineKeyboardMarkup()
-    keyboard.add(types.InlineKeyboardButton(text="Репетиторство", callback_data="stomat_2_fzl_tutoring"))
-    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2"))
-    await call.message.answer('Выбери услугу', reply_markup=keyboard)
-    await call.message.delete()
-
-
-@dp.callback_query_handler(text="stomat_2_fzl_tutoring")
-async def process_start_command(message: types.Message):
-    keyboard = types.InlineKeyboardMarkup()
-    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2_fzl"))
-    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    buttons = ["/start"]
-    keyboard_2.add(*buttons)
-    for i in stomat_2_fzl_tutoring:
-        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
-        time.sleep(0.2)
-    time.sleep(0.5)
-    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
 @dp.callback_query_handler(text="stomat_2_physyology")
 async def send_random_value(call: types.CallbackQuery):
@@ -1499,6 +1540,7 @@ async def process_start_command(message: types.Message):
 async def send_random_value(call: types.CallbackQuery):
     keyboard = types.InlineKeyboardMarkup()
     keyboard.add(types.InlineKeyboardButton(text="Репетиторство", callback_data="lech_fak_2_patfiz_tutoring"))
+    keyboard.add(types.InlineKeyboardButton(text="Решение тестов", callback_data="lech_fak_2_patfiz_solving_tests"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_2"))
     await call.message.answer('Выбери услугу', reply_markup=keyboard)
     await call.message.delete()
@@ -1511,6 +1553,19 @@ async def process_start_command(message: types.Message):
     buttons = ["/start"]
     keyboard_2.add(*buttons)
     for i in lech_fak_2_patfiz_tutoring:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+@dp.callback_query_handler(text="lech_fak_2_patfiz_solving_tests")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_2_patfiz"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in lech_fak_2_patfiz_solving_tests:
         await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
         time.sleep(0.2)
     time.sleep(0.5)
@@ -1544,6 +1599,7 @@ async def process_start_command(message: types.Message):
 async def send_random_value(call: types.CallbackQuery):
     keyboard = types.InlineKeyboardMarkup()
     keyboard.add(types.InlineKeyboardButton(text="Репетиторство", callback_data="lech_fak_3_patfiz_tutoring"))
+    keyboard.add(types.InlineKeyboardButton(text="Решение тестов", callback_data="lech_fak_3_patfiz_solving_tests"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_3"))
     await call.message.answer('Выбери услугу', reply_markup=keyboard)
     await call.message.delete()
@@ -1557,6 +1613,19 @@ async def process_start_command(message: types.Message):
     buttons = ["/start"]
     keyboard_2.add(*buttons)
     for i in lech_fak_3_patfiz_tutoring:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+@dp.callback_query_handler(text="lech_fak_3_patfiz_solving_tests")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak_3_patfiz"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in lech_fak_3_patfiz_solving_tests:
         await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
         time.sleep(0.2)
     time.sleep(0.5)
@@ -1714,6 +1783,61 @@ async def process_start_command(message: types.Message):
     time.sleep(0.5)
     await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
+
+
+@dp.callback_query_handler(text="stomat_2_propovedika_stomat")
+async def send_random_value(call: types.CallbackQuery):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Заполнение альбомов и рт", callback_data="stomat_2_propovedika_stomat_zapolnenie_albomov_i_rt"))
+    keyboard.add(types.InlineKeyboardButton(text="Лепка зубов", callback_data="stomat_2_propovedika_stomat_lepka_zubov"))
+    keyboard.add(types.InlineKeyboardButton(text="Продажа стоматологических материалов", callback_data="stomat_2_propovedika_prodazha_stom_materiala"))
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2"))
+    await call.message.answer('Выбери услугу', reply_markup=keyboard)
+    await call.message.delete()
+
+
+
+@dp.callback_query_handler(text="stomat_2_propovedika_stomat_zapolnenie_albomov_i_rt")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2_propovedika_stomat"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in stomat_2_propovedika_stomat_zapolnenie_albomov_i_rt:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+
+
+@dp.callback_query_handler(text="stomat_2_propovedika_stomat_lepka_zubov")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2_propovedika_stomat"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in stomat_2_propovedika_stomat_lepka_zubov:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+
+@dp.callback_query_handler(text="stomat_2_propovedika_prodazha_stom_materiala")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="stomat_2_propovedika_stomat"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in stomat_2_propovedika_prodazha_stom_materiala:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
 
 

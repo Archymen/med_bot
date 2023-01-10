@@ -66,7 +66,7 @@ stomat_1_informatika_dz = {
 }
 
 stomat_1_med_history_solving_tests = {
-    'https://vk.com/khabarina_olga'
+    'https://vk.com/khabarina_olga', 'https://vk.com/po.lin.ka_ma.linka'
 }
 
 
@@ -91,8 +91,8 @@ stomat_1_latin_dz = {
     'https://vk.com/danilich268'
 }
 
-stomat_1_fzl_tutoring = {
-    'https://vk.com/queenmeliza'
+stomat_1_physyology_tutoring = {
+    'https://vk.com/meyoumeow'
 }
 
 stomat_1_physic_solving_tests = {
@@ -120,7 +120,7 @@ lech_fak_1_anatomia_tutoring = {
 
 
 lech_fak_1_anatomia_solving_tests = {
-    'https://vk.com/id656170509'
+    'https://vk.com/id656170509', 'https://vk.com/doomgroke'
 }
 
 
@@ -142,7 +142,7 @@ lech_fak_1_biology_tutoring = {
 }
 
 lech_fak_1_biology_solving_tests = {
-    'https://vk.com/id466261515', 'https://vk.com/hellheart_cat'
+    'https://vk.com/id466261515', 'https://vk.com/hellheart_cat', 'https://vk.com/doomgroke'
 }
 
 lech_fak_1_biology_zapolnenie_rt = {
@@ -174,7 +174,7 @@ lech_fak_1_informatika_dz = {
 
 
 lech_fak_1_med_history_solving_tests = {
-    'https://vk.com/khabarina_olga'
+    'https://vk.com/khabarina_olga', 'https://vk.com/po.lin.ka_ma.linka'
 }
 
 
@@ -190,7 +190,7 @@ lech_fak_1_latin_tutoring = {
 
 
 lech_fak_1_latin_solving_tests = {
-    'https://vk.com/vovan4eg1008', 'https://vk.com/danilich268', 'https://vk.com/polenamin'
+    'https://vk.com/vovan4eg1008', 'https://vk.com/danilich268', 'https://vk.com/polenamin',
 }
 
 lech_fak_1_latin_dz = {
@@ -198,7 +198,7 @@ lech_fak_1_latin_dz = {
 }
 
 lech_fak_1_latin_help = {
-    'https://vk.com/ada0015', 'https://vk.com/vovan4eg1008', 'https://vk.com/polenamin', 'https://vk.com/id237190929'
+    'https://vk.com/ada0015', 'https://vk.com/vovan4eg1008', 'https://vk.com/polenamin', 'https://vk.com/id237190929', 'https://vk.com/danilich268'
 }
 
 
@@ -240,13 +240,30 @@ stomat_2_rus_history_solving_tests = {
     'https://vk.com/zawalilamedicina'
 }
 
+stomat_2_med_history_solving_tests = {
+    'https://vk.com/khabarina_olga', 'https://vk.com/po.lin.ka_ma.linka'
+}
+
+
+stomat_2_propovedika_stomat_zapolnenie_albomov_i_rt = {
+    'https://vk.com/fck_off_bic', 'https://vk.com/kissymiss', 'https://vk.com/ada0015', 'https://vk.com/id375936494', 'https://vk.com/zawalilamedicina'
+}
+
+stomat_2_propovedika_stomat_lepka_zubov = {
+    'https://vk.com/mareskaaa', 'https://vk.com/fck_off_bic', 'https://vk.com/kissymiss', 'https://www.avito.ru/moskva/krasota_i_zdorove/zuby_iz_plastilina_i_myla_po_konturam_mgmsu_2211093318', 'https://vk.com/dmklg375'
+}
+
+stomat_2_propovedika_prodazha_stom_materiala = {
+    'https://vk.com/grinsofi2003', 'https://vk.com/ada0015'
+}
+
 
 stomat_2_latin_tutoring = {
     'https://vk.com/id237190929'
 }
 
 stomat_2_latin_help = {
-    'https://vk.com/id237190929'
+    'https://vk.com/id237190929', 'https://vk.com/danilich268'
 }
 
 
@@ -265,7 +282,7 @@ stomat_2_patfiz_tutoring = {
 
 
 stomat_2_patfiz_solving_tests = {
-    'https://vk.com/id656170509'
+    'https://vk.com/id656170509', 'https://vk.com/secondream'
 }
 
 
@@ -294,6 +311,10 @@ lech_fak_2_rus_history_solving_tests = {
 }
 
 
+lech_fak_2_patfiz_solving_tests = {
+    'https://vk.com/secondream'
+}
+
 
 lech_fak_2_latin_tutoring = {
     'https://vk.com/id237190929'
@@ -301,11 +322,20 @@ lech_fak_2_latin_tutoring = {
 
 
 lech_fak_2_latin_help = {
-    'https://vk.com/id237190929'
+    'https://vk.com/id237190929', 'https://vk.com/danilich268'
 }
 
 lech_fak_2_microbiology_tutoring = {
     'https://vk.com/meyoumeow'
+}
+
+
+lech_fak_2_hystology_tutoring = {
+    'https://vk.com/erinavocado'
+}
+
+lech_fak_2_hystology_solving_tests = {
+    'https://vk.com/khabarina_olga'
 }
 
 
@@ -325,6 +355,10 @@ lech_fak_2_physyology_tutoring = {
 
 lech_fak_3_patfiz_tutoring = {
     'https://vk.com/queenmeliza'
+}
+
+lech_fak_3_patfiz_solving_tests = {
+    'https://vk.com/secondream'
 }
 
 
