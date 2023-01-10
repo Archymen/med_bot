@@ -25,7 +25,7 @@ async def cmd_random(message: types.Message):
     if user_channel_status["status"] != 'left':
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(types.InlineKeyboardButton(text="Начать", callback_data="go"))
-        await message.answer(f"Привет {message.from_user.first_name} \nЭтот бот сделан для того, чтобы ты мог разобраться с непонятными темами или найти себе исполнителя на работу\nНиже будут приведены ссылки на полезные беседы и группы\nТакже можешь оставить отзыв о преподавателе по ссылке ниже", reply_markup=keyboard)
+        await message.answer(f"Привет будущий доктор, дабы облегчить твое обучение в\nмедицинском, мы создали этого бота и надеемся что он\nбудет тебе полезен", reply_markup=keyboard)
     else:
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(types.InlineKeyboardButton(text="Подписаться", url='https://t.me/TEAMRMC'))
