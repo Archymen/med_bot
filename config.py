@@ -61,6 +61,11 @@ stomat_1_informatika_solving_tests = {
     'https://vk.com/polyak_marketplace'
 }
 
+
+stomat_1_informatika_final_works = {
+    'https://vk.com/jeka36'
+}
+
 stomat_1_informatika_dz = {
     'https://vk.com/polyak_marketplace'
 }
@@ -170,6 +175,10 @@ lech_fak_1_informatika_solving_tests = {
 
 lech_fak_1_informatika_dz = {
     'https://vk.com/polyak_marketplace'
+}
+
+lech_fak_1_informatika_final_works = {
+    'https://vk.com/jeka36'
 }
 
 
@@ -408,3 +417,4 @@ referat = {
 doclad = {
     'https://vk.com/zurik_11', 'https://vk.com/zawalilamedicina', 'https://m.vk.com/catherinedremova'
 }
+
