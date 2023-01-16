@@ -39,7 +39,8 @@ async def send_random_value(call: types.CallbackQuery):
     keyboard = types.InlineKeyboardMarkup()
     keyboard.add(types.InlineKeyboardButton(text="Стомат", callback_data="stomat"))
     keyboard.add(types.InlineKeyboardButton(text="Леч фак", callback_data="lech_fak"))
-    keyboard.add(types.InlineKeyboardButton(text="Разное", callback_data="other"))
+    keyboard.add(types.InlineKeyboardButton(text="Помощь с экзаменами", callback_data="exams_help"))
+    keyboard.add(types.InlineKeyboardButton(text="Для ленивых", callback_data="other"))
     keyboard.add(types.InlineKeyboardButton(text="Информация", callback_data="info"))
     await call.message.answer("Выбери факультет", reply_markup=keyboard)
     await call.message.delete()
@@ -1874,6 +1875,19 @@ async def process_start_command(message: types.Message):
     await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
 
+
+@dp.callback_query_handler(text="exams_help")
+async def process_start_command(message: types.Message):
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="go"))
+    keyboard_2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["/start"]
+    keyboard_2.add(*buttons)
+    for i in exams_help:
+        await bot.send_message(message.from_user.id, i, reply_markup=keyboard_2)
+        time.sleep(0.2)
+    time.sleep(0.5)
+    await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
 
 
 

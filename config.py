@@ -418,3 +418,9 @@ doclad = {
     'https://vk.com/zurik_11', 'https://vk.com/zawalilamedicina', 'https://m.vk.com/catherinedremova'
 }
 
+######## Помощь с экзаменами ###############
+
+
+exams_help = {
+    'https://vk.com/id761968649'
+}
