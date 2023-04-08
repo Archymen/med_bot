@@ -4,9 +4,6 @@ from aiogram.dispatcher.filters import Text
 import time
 
 
-
-from translator import *
-
 from config import *
 
 
