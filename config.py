@@ -54,11 +54,11 @@ stomat_1_biology_zapolnenie_rt = {
 }
 
 stomat_1_BX_tutoring = {
-    'https://vk.com/queenmeliza', 'https://vk.com/limbithy', 'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026'
+    'https://vk.com/queenmeliza', 'https://vk.com/limbithy', 'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 stomat_1_BX_diktovka = {
-    'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026'
+    'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 stomat_1_hystology_tutoring = {
@@ -118,11 +118,11 @@ stomat_1_physic_solving_tests = {
 }
 
 stomat_1_BX_solving_tests = {
-    'https://vk.com/id227916026'
+    'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 stomat_1_BX_help = {
-    'https://vk.com/id227916026'
+    'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 stomat_1_chemistry_tutoring = {

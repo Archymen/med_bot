@@ -3,6 +3,10 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text
 import time
 
+
+
+from translator import *
+
 from config import *
 
 
@@ -37,6 +41,7 @@ async def cmd_random(message: types.Message):
 @dp.callback_query_handler(text="go")
 async def send_random_value(call: types.CallbackQuery):
     keyboard = types.InlineKeyboardMarkup()
+    keyboard.add(types.InlineKeyboardButton(text="Переводчик", callback_data="translator"))
     keyboard.add(types.InlineKeyboardButton(text="Стомат", callback_data="stomat"))
     keyboard.add(types.InlineKeyboardButton(text="Леч фак", callback_data="lech_fak"))
     keyboard.add(types.InlineKeyboardButton(text="Помощь с экзаменами", callback_data="exams_help"))
@@ -119,7 +124,6 @@ async def send_random_value(call: types.CallbackQuery):
     keyboard.add(types.InlineKeyboardButton(text="Латынь", callback_data="stomat_2_latin"))
     keyboard.add(types.InlineKeyboardButton(text="Микробиология", callback_data="stomat_2_microbiology"))
     keyboard.add(types.InlineKeyboardButton(text="ЦСТ", callback_data="stomat_2_cst"))
-    keyboard.add(types.InlineKeyboardButton(text="ЦСТ", callback_data="stomat_2_profilaktika"))
     keyboard.add(types.InlineKeyboardButton(text="Патан", callback_data="stomat_2_patan"))
     keyboard.add(types.InlineKeyboardButton(text="Патфиз", callback_data="stomat_2_patfiz"))
     keyboard.add(types.InlineKeyboardButton(text="Профилактика", callback_data="stomat_2_profilaktika"))
@@ -205,7 +209,7 @@ async def send_random_value(call: types.CallbackQuery):
     keyboard.add(types.InlineKeyboardButton(text="Фарма", callback_data="lech_fak_3_pharma"))
     keyboard.add(types.InlineKeyboardButton(text="Пропед леч", callback_data="lech_fak_3_proped_lech"))
     keyboard.add(types.InlineKeyboardButton(text="Топ Анат", callback_data="lech_fak_3_top_anat"))
-    keyboard.add(types.InlineKeyboardButton(text="Топ Анат", callback_data="lech_fak_3_bx"))
+    keyboard.add(types.InlineKeyboardButton(text="БХ", callback_data="lech_fak_3_bx"))
     keyboard.add(types.InlineKeyboardButton(text="Назад", callback_data="lech_fak"))
     await call.message.answer('Выбери предмет', reply_markup=keyboard)
     await call.message.delete()
@@ -3234,6 +3238,15 @@ async def process_start_command(message: types.Message):
         time.sleep(0.2)
     time.sleep(0.5)
     await bot.send_message(message.from_user.id, name, reply_markup=keyboard)
+
+
+
+
+
+
+
+
+
 
 
 
