@@ -275,7 +275,7 @@ stomat_2_BZHD_solving_tests = {
 
 
 stomat_2_BX_tutoring = {
-    'https://vk.com/queenmeliza', 'https://vk.com/e_berinova', 'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026'
+    'https://vk.com/queenmeliza', 'https://vk.com/e_berinova', 'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 
@@ -289,11 +289,11 @@ stomat_2_med_history_solving_tests = {
 
 
 stomat_2_BX_diktovka = {
-    'https://vk.com/proskokov_n', 'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026'
+    'https://vk.com/proskokov_n', 'https://vk.com/arina__shcherbakova', 'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 stomat_2_BX_solving_tests = {
-    'https://vk.com/limbithy', 'https://vk.com/id227916026'
+    'https://vk.com/limbithy', 'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 stomat_2_propovedika_diktovka = {
@@ -305,7 +305,7 @@ stomat_2_profilaktika_diktovka = {
 }
 
 stomat_2_BX_help = {
-    'https://vk.com/id227916026'
+    'https://vk.com/id227916026', 'https://vk.com/e_berinova'
 }
 
 
@@ -498,12 +498,12 @@ lech_fak_2_physyology_solving_tests = {
 
 
 lech_fak_2_BX_diktovka = {
-    'https://vk.com/lenskayaaaaaa', 'https://vk.com/arina__shcherbakova'
+    'https://vk.com/lenskayaaaaaa', 'https://vk.com/arina__shcherbakova', 'https://vk.com/e_berinova'
 }
 
 
 lech_fak_2_BX_solving_tests = {
-    'https://vk.com/limbithy'
+    'https://vk.com/limbithy', 'https://vk.com/e_berinova'
 }
 
 
